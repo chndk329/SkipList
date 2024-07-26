@@ -30,5 +30,9 @@
 make            // complie demo main.cpp
 ./bin/main      // run 
 ```
+或
+```
+sh test.sh
+```
 <br/>
 如果想自己写程序使用这个KV存储引擎，只需要 include "skiplist.h" 即可。
