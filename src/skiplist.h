@@ -64,7 +64,7 @@ private:
     std::ifstream _file_reader;     // loadfile
 
 public:
-    skiplist(int level_ = DEF_LEVEL);                  // 默认取LEVELS
+    skiplist(int level_ = DEF_LEVEL);                  // 跳表的默认层数为20层
     skiplist(Comp less_);
    ~skiplist();
 
@@ -109,6 +109,7 @@ public:
     }
 
 public:
+    // 数据接口
     void insert(const K&, const V&);                    // 插入
     Iter find(const K&);                                // 查询
     bool erase(const K&);                               // 删除
@@ -145,8 +146,10 @@ private:
         }
         return cur -> _next[0];
     }
+
     int randomLevel();                                  // 获取结点层数
     void free(node*);                                   // 递归释放结点空间
+
     void getKeyAndValueFromString(const std::string& str, std::string *key, std::string *value);        // 从str中获取key和value
     bool isValidString(const std::string& str);                                                         // 判断str是否存在分隔符delimiter
 };
