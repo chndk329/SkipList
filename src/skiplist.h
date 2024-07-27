@@ -357,7 +357,7 @@ void skiplist<K, V, Comp>::dump(std::string filename)
 
     node *cur = this -> _head -> _next[0];
 
-    while(cur)
+    while(cur != _tail)
     {
         _file_writer << cur -> key() << ":" << cur -> value() << "\n";
         cur = cur -> _next[0];
