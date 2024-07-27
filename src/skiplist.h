@@ -116,6 +116,7 @@ public:
     bool count(const K&);                               // 判断key是否存在
     void clear();                                       // 清空
     int size();                                         // 跳表元素个数
+    bool empty();                                       // 判断是否为空
 
     void load(std::string filename = STORE_FILE);   // 加载磁盘文件
     void dump(std::string filename = STORE_FILE);   // 数据存盘
@@ -302,6 +303,13 @@ bool skiplist<K, V, Comp>::count(const K& key_)
     if(p == _tail) return false;
     return p -> key() == key_;
 }
+
+template<typename K, typename V, typename Comp>
+bool skiplist<K, V, Comp>::empty()
+{
+    return (_size == 0);
+}
+
 //=====================================================================================================================================
 
 //========================================================= 文件操作 ===================================================================
