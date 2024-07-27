@@ -13,8 +13,7 @@
 * makefile 编译脚本
 * store 数据落盘的文件存放在这个文件夹 
 * test.sh 压力测试脚本
-* LICENSE 使用协议
-
+  
 ## 提供接口
 * insert（插入数据）
 * erase（删除数据）
